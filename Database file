@@ -1,0 +1,30 @@
+CREATE DATABASE mythosss;
+
+USE mythosss;
+
+CREATE TABLE users (
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(50),
+password VARCHAR(50)
+);
+
+CREATE TABLE profiles (
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(50),
+name VARCHAR(100),
+bio TEXT
+);
+
+CREATE TABLE favourites (
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(50),
+title VARCHAR(255),
+poster TEXT,
+type VARCHAR(50)
+);
+
+CREATE TABLE followers (
+id INT AUTO_INCREMENT PRIMARY KEY,
+user VARCHAR(50),
+follower VARCHAR(50)
+);

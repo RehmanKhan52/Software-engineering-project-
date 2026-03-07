@@ -2,29 +2,27 @@ CREATE DATABASE mythosss;
 
 USE mythosss;
 
-CREATE TABLE users (
-id INT AUTO_INCREMENT PRIMARY KEY,
-username VARCHAR(50),
-password VARCHAR(50)
+CREATE TABLE users(
+username VARCHAR(50) PRIMARY KEY,
+password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE profiles (
+CREATE TABLE favourites(
 id INT AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(50),
+title VARCHAR(255),
+poster VARCHAR(255),
+type VARCHAR(20)
+);
+
+CREATE TABLE profiles(
+username VARCHAR(50) PRIMARY KEY,
 name VARCHAR(100),
 bio TEXT
 );
 
-CREATE TABLE favourites (
-id INT AUTO_INCREMENT PRIMARY KEY,
-username VARCHAR(50),
-title VARCHAR(255),
-poster TEXT,
-type VARCHAR(50)
-);
-
-CREATE TABLE followers (
-id INT AUTO_INCREMENT PRIMARY KEY,
-user VARCHAR(50),
-follower VARCHAR(50)
+CREATE TABLE follows(
+follower VARCHAR(50),
+target VARCHAR(50),
+PRIMARY KEY(follower,target)
 );
